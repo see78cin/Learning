@@ -9,7 +9,7 @@ class Dice:
         self.outcome = None
         self.games = 0
         self.theo = {2: 1 / 36, 3: 2 / 36, 4: 3 / 36, 5: 4 / 36, 6: 5 / 36, 7: 6 / 36, 8: 5 / 36, 9: 4 / 36, 10: 3 / 36,
-                     11: 2 / 36, 12: 1 / 36} # theoretical probability of dice roll outcome 2 to 12.
+                     11: 2 / 36, 12: 1 / 36}  # theoretical probability of dice roll outcome 2 to 12.
 
     # roll dice and return dice1, dice1, result
     def roll(self):
@@ -77,8 +77,6 @@ class Dice:
         chart1.set_categories(titles)
         chart1.x_axis.title = 'Outcomes'
         chart1.y_axis.title = 'Frequency'
-        # chart1.y_axis.scaling.max = 100
-        # chart1.set_categories(titles)
         sheet.add_chart(chart1, 'g2')
 
         # populate fsheet with theo probability
