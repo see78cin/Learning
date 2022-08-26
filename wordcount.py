@@ -64,8 +64,6 @@ def chartme(wbook, x_title, y_title,chart_title):
     chart1.set_categories(titles)
     chart1.x_axis.title = x_title
     chart1.y_axis.title = y_title
-    #chart1.y_axis.scaling.max = 100
-    #chart1.set_categories(titles)
     sheet.add_chart(chart1, 'g2')
     wbook.save('Word_Count.xlsx')
 
