@@ -3,7 +3,6 @@ from openpyxl import Workbook
 from openpyxl.chart import BarChart, Reference
 import math
 
-# test
 class Dice:
     def __init__(self):
         self.dice = (1, 2, 3, 4, 5, 6)
