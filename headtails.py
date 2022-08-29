@@ -11,12 +11,12 @@ for trial in range(trials):
 
     tail = 0  # keep track of tail count
     head = 0  # keep track of head count
-    outcome = list() # list of outcomes
-    #temlist = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    outcome = list()  # list of outcomes
+    # temlist = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     for coinflip in range(coinflips):
-        ht = random.randint(0, 1) # tail is 1 , head is 0
-       # ht = temlist[coinflip]
-            # print(ht)
+        ht = random.randint(0, 1)  # tail is 1 , head is 0
+        # ht = temlist[coinflip]
+        # print(ht)
         if ht == 1:
             outcome.append(ht)  # outcome is tail, so add to list
             tail += 1  # add to tail count
@@ -28,29 +28,26 @@ for trial in range(trials):
         else:
             head = 0  # there is no head, so reset head count to 0
         if tail == 6:
-            TnumberOfStreaks += 1 # there is 6 tails, so increase streak count
-            tail = 0 # reset tail count
+            TnumberOfStreaks += 1  # there is 6 tails, so increase streak count
+            tail = 0  # reset tail count
         if head == 6:
-            HnumberOfStreaks += 1 # there is 6 head, so increase streak count
-            head = 0 #reset head count
+            HnumberOfStreaks += 1  # there is 6 head, so increase streak count
+            head = 0  # reset head count
     count += 1
     print(f'Trial # {count}')
     print(f'Head streak {HnumberOfStreaks}')
     print(f'Tail streak {TnumberOfStreaks}')
-    temp.append(outcome) # keeps a list of trial.
-numberOfStreaks = HnumberOfStreaks+TnumberOfStreaks
+    temp.append(outcome)  # keeps a list of trial.
+numberOfStreaks = HnumberOfStreaks + TnumberOfStreaks
 print(f'{trials} trials of {coinflips} coin flips')
 print(f'Total Head streak {HnumberOfStreaks}')
 print(f'Total Tail streak {TnumberOfStreaks}')
 print(f'Total streak {numberOfStreaks}')
-format_numOfStreaks = format(numberOfStreaks/trials,'.5f')
+format_numOfStreaks = format(numberOfStreaks / trials, '.5f')
 print(f'Chance of streak from {trials} trials of {coinflips} coin flips: {format_numOfStreaks}')
 
-#print out list of trials
+# creat text file and write to it
+f = open('data.txt', mode='w')
 for i, j in enumerate(temp):
-    print (i+1, j)
-
-
-
-
-
+    f.write(f'{i} {j}\n')
+f.close()
