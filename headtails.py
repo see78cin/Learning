@@ -1,8 +1,8 @@
 import random
 
 numberOfStreaks = 0  # keep track of streaks
-TnumberOfStreaks = 0
-HnumberOfStreaks = 0
+TnumberOfStreaks = 0 # keep track of Tail streak
+HnumberOfStreaks = 0  # keep track of Head streak
 temp = list()
 
 for trials in range(2):
