@@ -3,9 +3,10 @@ import random
 numberOfStreaks = 0  # keep track of streaks
 HnumberOfStreaks = 0  # keep track of streaks
 TnumberOfStreaks = 0  # keep track of streaks
+count = 0
 temp = list()
 trials = int(input('Enter number of trials: '))
-coinflips = int(input('Enter number of trials: '))
+coinflips = int(input('Enter number of coin flips per trial: '))
 for trial in range(trials):
 
     tail = 0  # keep track of tail count
@@ -28,14 +29,22 @@ for trial in range(trials):
             TnumberOfStreaks += 1 # there is 6 tails, so increase streak count
         if head == 6:
             HnumberOfStreaks += 1 # there is 6 head, so increase streak count
-    temp.append(outcome)
+    count += 1
+    print(f'Trial # {count}')
+    print(f'Head streak {HnumberOfStreaks}')
+    print(f'Tail streak {TnumberOfStreaks}')
+    temp.append(outcome) # keeps a list of trial.
 numberOfStreaks = HnumberOfStreaks+TnumberOfStreaks
 print(f'{trials} trials of {coinflips} coin flips')
 print(f'Total Head streak {HnumberOfStreaks}')
 print(f'Total Tail streak {TnumberOfStreaks}')
 print(f'Total streak {numberOfStreaks}')
 format_numOfStreaks = format(numberOfStreaks/trials,'.5f')
-print(f'Chance of streak: {format_numOfStreaks}')
+print(f'Chance of streak from {trials} trials: {format_numOfStreaks}')
+
+#print out list of trials
+for i, j in enumerate(temp):
+    print (i, j)
 
 
 
