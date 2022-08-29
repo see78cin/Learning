@@ -48,9 +48,9 @@ print(f'Chance of streak from {trials} trials of {coinflips} coin flips: {format
 
 #print out list of trials
 for i, j in enumerate(temp):
-    print (i, j)
+    print (i+1, j)
 
-print(tail)
+
 
 
 
