@@ -12,10 +12,10 @@ for trial in range(trials):
     tail = 0  # keep track of tail count
     head = 0  # keep track of head count
     outcome = list() # list of outcomes
-    temlist = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+    #temlist = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
     for coinflip in range(coinflips):
-       # ht = random.randint(0, 1) # tail is 1 , head is 0
-        ht = temlist[coinflip]
+        ht = random.randint(0, 1) # tail is 1 , head is 0
+       # ht = temlist[coinflip]
             # print(ht)
         if ht == 1:
             outcome.append(ht)  # outcome is tail, so add to list
@@ -29,10 +29,10 @@ for trial in range(trials):
             head = 0  # there is no head, so reset head count to 0
         if tail == 6:
             TnumberOfStreaks += 1 # there is 6 tails, so increase streak count
-            tail = 0
+            tail = 0 # reset tail count
         if head == 6:
             HnumberOfStreaks += 1 # there is 6 head, so increase streak count
-            head = 0
+            head = 0 #reset head count
     count += 1
     print(f'Trial # {count}')
     print(f'Head streak {HnumberOfStreaks}')
