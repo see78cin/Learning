@@ -1,6 +1,8 @@
 import random
 
 numberOfStreaks = 0  # keep track of streaks
+HnumberOfStreaks = 0  # keep track of streaks
+TnumberOfStreaks = 0  # keep track of streaks
 temp = list()
 trials = int(input('Enter number of trials: '))
 coinflips = int(input('Enter number of trials: '))
@@ -23,15 +25,16 @@ for trial in range(trials):
         else:
             head = 0  # there is no head, so reset head count to 0
         if tail == 6:
-            numberOfStreaks += 1 # there is 6 tails, so increase streak count
+            TnumberOfStreaks += 1 # there is 6 tails, so increase streak count
         if head == 6:
-            numberOfStreaks += 1 # there is 6 head, so increase streak count
+            HnumberOfStreaks += 1 # there is 6 head, so increase streak count
     temp.append(outcome)
-
+numberOfStreaks = HnumberOfStreaks+TnumberOfStreaks
 print(f'{trials} trials of {coinflips} coin flips')
-#print(outcome, len(outcome))
+print(f'Total Head streak {HnumberOfStreaks}')
+print(f'Total Tail streak {TnumberOfStreaks}')
 print(f'Total streak {numberOfStreaks}')
-format_numOfStreaks = format(numberOfStreaks/10000,'.5f')
+format_numOfStreaks = format(numberOfStreaks/trials,'.5f')
 print(f'Chance of streak: {format_numOfStreaks}')
 
 
