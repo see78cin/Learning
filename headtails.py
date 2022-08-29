@@ -51,3 +51,4 @@ f = open('data.txt', mode='w')
 for i, j in enumerate(temp):
     f.write(f'{i} {j}\n')
 f.close()
+#
