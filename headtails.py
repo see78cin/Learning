@@ -40,7 +40,7 @@ print(f'Total Head streak {HnumberOfStreaks}')
 print(f'Total Tail streak {TnumberOfStreaks}')
 print(f'Total streak {numberOfStreaks}')
 format_numOfStreaks = format(numberOfStreaks/trials,'.5f')
-print(f'Chance of streak from {trials} trials: {format_numOfStreaks}')
+print(f'Chance of streak from {trials} trials of {coinflips} coin flips: {format_numOfStreaks}')
 
 #print out list of trials
 for i, j in enumerate(temp):
