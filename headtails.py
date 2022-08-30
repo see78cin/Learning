@@ -49,6 +49,6 @@ print(f'Chance of streak from {trials} trials of {coinflips} coin flips: {format
 # creat text file and write to it
 f = open('data.txt', mode='w')
 for i, j in enumerate(temp):
-    f.write(f'{i} {j}\n')
+    f.write(f'{i+1} {j}\n')
 f.close()
 #
