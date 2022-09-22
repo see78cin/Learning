@@ -51,10 +51,10 @@ class Dice:
 
     # puts dictionary results back to list form to sort the outcomes.
     def extractd(self, temp):
-        tmplist = list()
-        for result, count in temp.items():
-            tmplist.append((result, count))
-        return tmplist
+        #tmplist = list()
+        #for result, count in temp.items():
+          #  tmplist.append((result, count))
+        return list(temp.items())
 
     # create chart from excel sheet data
     def chartme(self, wbook, histogram, name):
