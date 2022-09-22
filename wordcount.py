@@ -54,7 +54,7 @@ def exporttoexcel(alist):
     return wb
 
 
-def chartme(wbook, x_title, y_title,chart_title):
+def chartme(wbook, x_title, y_title,chart_title, sfilename = 'Word_Count.xlsx'):
     sheet = wbook.active
     data = Reference(sheet, min_row=1, max_row=sheet.max_row, min_col=2, max_col=2)
     titles = Reference(sheet, min_row=2, max_row=sheet.max_row, min_col=1, max_col=1)
@@ -65,7 +65,7 @@ def chartme(wbook, x_title, y_title,chart_title):
     chart1.x_axis.title = x_title
     chart1.y_axis.title = y_title
     sheet.add_chart(chart1, 'g2')
-    wbook.save('Word_Count.xlsx')
+    wbook.save(sfilename)
 
 def testing():
     words = mylist(fname)
@@ -73,7 +73,7 @@ def testing():
     newlist = extractd(stripped_words)  # build list from dictionary
     sortedlist = sorted(newlist, reverse=True)
     work = exporttoexcel(sortedlist)
-    chartme(work, 'Words', 'Word Count', 'Top 5 Popular Words')
+    chartme(work, 'Words', 'Word Count', 'Top 5 Popular Words', 'mycount.xlsx')
 
 testing()
 
